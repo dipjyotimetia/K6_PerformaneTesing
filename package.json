@@ -1,0 +1,18 @@
+{
+  "name": "k6",
+  "version": "1.0.0",
+  "description": "Peformance Testing Framework",
+  "main": "index.js",
+  "dependencies": {
+    "@types/k6": "^0.29.1",
+    "faker": "^5.1.0",
+    "fs-extra": "^9.1.0",
+    "rimraf": "^3.0.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "k6 run --out influxdb=http://localhost:8086/k6 tests/http_test.js"
+  },
+  "author": "Dipjyoti Metia",
+  "license": "ISC"
+}

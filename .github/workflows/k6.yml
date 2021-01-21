@@ -1,0 +1,17 @@
+on: [push]
+
+jobs:
+  k6_local_test:
+    name: k6 local test run - basic example
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+
+      - name: Run local k6 test
+        uses: k6io/action@v0.2.0
+        with:
+          filename: tests/http_test.js
+          cloud: true
+          token: ${{ secrets.K6_CLOUD_API_TOKEN }}
